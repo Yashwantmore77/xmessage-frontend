@@ -9,7 +9,6 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
   const navigate = useNavigate(); // use useNavigate inside a Router context
 
   useEffect(() => {
-    debugger
     const checkAuth = async () => {
       dispatch(showLoader());
       const token = localStorage.getItem('token');

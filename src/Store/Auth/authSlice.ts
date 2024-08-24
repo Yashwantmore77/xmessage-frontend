@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-interface AuthState {
+export interface AuthState {
   isAuthenticated: boolean | null;
 }
 
@@ -15,8 +15,11 @@ const authSlice = createSlice({
     setAuthentication(state, action: PayloadAction<boolean | null>) {
       state.isAuthenticated = action.payload;
     },
+    logout(state) {
+      state.isAuthenticated = false;
+    },
   },
 });
 
-export const { setAuthentication } = authSlice.actions;
+export const { setAuthentication , logout } = authSlice.actions;
 export default authSlice.reducer;

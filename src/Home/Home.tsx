@@ -1,9 +1,9 @@
 import React from 'react';
 import { Button, Container, Typography, Box } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import VideoCall from '../Components/VideoCall'
 
 const Home: React.FC = () => {
-    debugger
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -13,6 +13,7 @@ const Home: React.FC = () => {
 
   return (
     <Container maxWidth="sm">
+      
       <Box
         display="flex"
         flexDirection="column"
@@ -20,16 +21,10 @@ const Home: React.FC = () => {
         justifyContent="center"
         height="100vh"
       >
-        <Typography variant="h4" component="h1" gutterBottom>
-          Home Page
-        </Typography>
-        <Button
-          variant="contained"
-          color="secondary"
-          onClick={handleLogout}
-        >
-          Logout
-        </Button>
+        <>{console.log('ccc')}</>
+        
+        <VideoCall />
+        
       </Box>
     </Container>
   );
