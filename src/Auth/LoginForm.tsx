@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, FormEvent } from 'react';
+import React, { useState, ChangeEvent, FormEvent, useEffect } from 'react';
 import { Button, TextField, Container, Typography, Box } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import useAuth from '../Utils/useAuth';
@@ -8,13 +8,17 @@ const LoginForm: React.FC = () => {
   const [password, setPassword] = useState<string>('');
   const [error, setError] = useState<string>('');
   const navigate = useNavigate();
-  const isAuthenticated = useAuth();  // Use the custom hook
+  const isAuthenticated: boolean | null = useAuth(); // Assuming useAuth returns a boolean indicating authentication status
+
+
+  useEffect(()=>{
 
    // Redirect authenticated users
- if (isAuthenticated) {
+   if (isAuthenticated) {
     navigate('/home');
-    return null;  // Render nothing while redirecting
   }
+  },[isAuthenticated ,navigate])
+
 
   const handleUsernameChange = (e: ChangeEvent<HTMLInputElement>) => {
     setUsername(e.target.value);
@@ -42,7 +46,6 @@ const LoginForm: React.FC = () => {
       if (response.ok) {
         // Store the token and redirect to a protected page or home
         localStorage.setItem('token', data.token);
-        alert('Login successful');
         navigate('/home');
         // Redirect logic here, e.g., navigate to another page
       } else {
