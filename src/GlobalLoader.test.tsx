@@ -8,12 +8,12 @@ import loaderReducer from './Store/Loader/loaderSlice'; // Adjust the import pat
 // Create a mock store with the loader slice
 const createStore = (isLoading: boolean) => {
   return configureStore({
-    reducer: {
-      loader: loaderReducer,
-    },
-    preloadedState: {
-      loader: { isLoading }, // Set the initial state for the test
-    },
+          reducer: {
+            loader: loaderReducer,
+          },
+          preloadedState: {
+            loader: { isLoading }, // Set the initial state for the test
+          },
   });
 };
 
