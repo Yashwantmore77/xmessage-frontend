@@ -21,7 +21,6 @@ const App: React.FC = () => {
 
 const MainLayout: React.FC = () => {
   const isAuthenticated = useAuth();
-
   return (
     <>
       {isAuthenticated ? (

@@ -21,10 +21,7 @@ const Home: React.FC = () => {
         justifyContent="center"
         height="100vh"
       >
-        <>{console.log('ccc')}</>
-        
         <VideoCall />
-        
       </Box>
     </Container>
   );
