@@ -1,15 +1,15 @@
 import React from 'react';
-import { Button, Container, Typography, Box } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import {  Container, Box } from '@mui/material';
+// import { useNavigate } from 'react-router-dom';
 import VideoCall from '../Components/VideoCall'
 
 const Home: React.FC = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const handleLogout = () => {
-    localStorage.removeItem('token');
-    navigate('/login');
-  };
+  // const handleLogout = () => {
+  //   localStorage.removeItem('token');
+  //   navigate('/login');
+  // };
 
   return (
     <Container maxWidth="sm">
