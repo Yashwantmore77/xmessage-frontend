@@ -9,26 +9,7 @@ const useAuth = () => {
     const checkAuth = async () => {
       const token = localStorage.getItem('token');
       if (token) {
-        try {
-          const response = await fetch('http://127.0.0.1:5000/protected', {
-            method: 'GET',
-            headers: {
-              'Authorization': token,
-            },
-          });
-
-          if (response.ok) {
-            setIsAuthenticated(true);
-          } else {
-            localStorage.removeItem('token');
-            setIsAuthenticated(false);
-            navigate('/login');
-          }
-        } catch (error) {
-          localStorage.removeItem('token');
-          setIsAuthenticated(false);
-          navigate('/login');
-        }
+        setIsAuthenticated(true);
       } else {
         setIsAuthenticated(false);
         navigate('/login');

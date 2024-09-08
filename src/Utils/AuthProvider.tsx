@@ -13,24 +13,7 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
       dispatch(showLoader());
       const token = localStorage.getItem('token');
       if (token) {
-        try {
-          const response = await fetch('http://127.0.0.1:5000/protected', {
-            method: 'GET',
-            headers: {
-              'Authorization': token,
-            },
-          });
-
-          if (response.ok) {
-            dispatch(setAuthentication(true));
-          } else {
-            localStorage.removeItem('token');
-            dispatch(setAuthentication(false));
-          }
-        } catch (error) {
-          localStorage.removeItem('token');
-          dispatch(setAuthentication(false));
-        }
+        dispatch(setAuthentication(true));
       } else {
         dispatch(setAuthentication(false));
       }

@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import store from './Store/store';
 import { Provider } from 'react-redux';
 import * as process from 'process';
+import ErrorBoundary from './Components/ErrorBoundary';
 
 (window as any).global = window;
 (window as any).process = process;
@@ -18,7 +19,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <Provider store={store}>
     <Router>
-      <App />
+      <ErrorBoundary>
+        <App />
+      </ErrorBoundary>
     </Router>
   </Provider>,
 );

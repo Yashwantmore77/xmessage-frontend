@@ -10,7 +10,6 @@ const Home: React.FC = () => {
   //   localStorage.removeItem('token');
   //   navigate('/login');
   // };
-
   return (
     <Container maxWidth="sm">
       
@@ -21,7 +20,7 @@ const Home: React.FC = () => {
         justifyContent="center"
         height="100vh"
       >
-        <VideoCall />
+        {/* <VideoCall /> */}
       </Box>
     </Container>
   );
